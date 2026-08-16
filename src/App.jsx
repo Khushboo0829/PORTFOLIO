@@ -22,6 +22,23 @@ function App() {
     'GitHub',
   ]
 
+  const projects = [
+    {
+      title: 'COVE – Mental Health AI Chatbot',
+      description:
+        'An AI-powered mental health support chatbot designed to provide emotional support, mood tracking, chat history, and helpful resources.',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Supabase', 'Gemini AI'],
+      github: 'https://github.com/Khushboo0829/COVE-Mental-Health-AI-Chatbot',
+    },
+    {
+      title: 'CodeFlow Visualizer',
+      description:
+        'A code execution visualizer that demonstrates how programming logic runs step by step using memory updates, output tracking, and code highlighting.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/Khushboo0829/CodeFlowVisualizer',
+    },
+  ]
+
   const [roleIndex, setRoleIndex] = useState(0)
 
   useEffect(() => {
@@ -41,7 +58,6 @@ function App() {
 
       {/* HERO SECTION */}
       <section className="hero-section" id="home">
-
         <motion.div
           className="hero-left"
           initial={{ opacity: 0, x: -80 }}
@@ -122,12 +138,10 @@ developer.keepLearning();`}
             </pre>
           </motion.div>
         </motion.div>
-
       </section>
 
       {/* ABOUT SECTION */}
       <section className="about-section" id="about">
-
         <motion.div
           className="about-container"
           initial={{ opacity: 0, y: 70 }}
@@ -135,7 +149,6 @@ developer.keepLearning();`}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-
           <h2 className="section-title">
             About <span>Me</span>
           </h2>
@@ -155,7 +168,6 @@ developer.keepLearning();`}
           </p>
 
           <div className="about-cards">
-
             <motion.div
               className="about-card"
               whileHover={{ y: -10, scale: 1.03 }}
@@ -182,16 +194,12 @@ developer.keepLearning();`}
               <p>Software Development</p>
               <span>Learning & Building</span>
             </motion.div>
-
           </div>
-
         </motion.div>
-
       </section>
 
       {/* SKILLS SECTION */}
       <section className="skills-section" id="skills">
-
         <motion.div
           className="skills-container"
           initial={{ opacity: 0, y: 70 }}
@@ -199,7 +207,6 @@ developer.keepLearning();`}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-
           <h2 className="section-title">
             My <span>Skills</span>
           </h2>
@@ -236,9 +243,69 @@ developer.keepLearning();`}
               </motion.div>
             ))}
           </div>
-
         </motion.div>
+      </section>
 
+      {/* PROJECTS SECTION */}
+      <section className="projects-section" id="projects">
+        <motion.div
+          className="projects-container"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="section-title">
+            My <span>Projects</span>
+          </h2>
+
+          <p className="projects-description">
+            A few projects I have built while learning and applying my
+            development skills.
+          </p>
+
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <motion.div
+                className="project-card"
+                key={project.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                }}
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -12,
+                }}
+              >
+                <div className="project-number">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+
+                <h3>{project.title}</h3>
+
+                <p>{project.description}</p>
+
+                <div className="project-tech">
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-button"
+                >
+                  View on GitHub
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
     </div>
