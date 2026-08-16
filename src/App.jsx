@@ -35,7 +35,7 @@ function App() {
       description:
         'A code execution visualizer that demonstrates how programming logic runs step by step using memory updates, output tracking, and code highlighting.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/Khushboo0829/CodeFlowVisualizer',
+      'https://github.com/Khushboo0829/CodeFlow-Visualizer',
     },
   ]
 
