@@ -39,6 +39,19 @@ function App() {
     },
   ]
 
+  const education = [
+    {
+      degree: 'Master of Computer Applications (MCA)',
+      college: 'Banasthali Vidyapith, Rajasthan',
+      status: 'Currently Pursuing',
+    },
+    {
+      degree: 'Bachelor of Computer Applications (BCA)',
+      college: 'Banasthali Vidyapith, Rajasthan',
+      status: 'Completed',
+    },
+  ]
+
   const [roleIndex, setRoleIndex] = useState(0)
 
   useEffect(() => {
@@ -276,9 +289,7 @@ developer.keepLearning();`}
                   delay: index * 0.15,
                 }}
                 viewport={{ once: true }}
-                whileHover={{
-                  y: -12,
-                }}
+                whileHover={{ y: -12 }}
               >
                 <div className="project-number">
                   {String(index + 1).padStart(2, '0')}
@@ -302,6 +313,63 @@ developer.keepLearning();`}
                 >
                   View on GitHub
                 </a>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* EDUCATION SECTION */}
+      <section className="education-section" id="education">
+        <motion.div
+          className="education-container"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="section-title">
+            My <span>Education</span>
+          </h2>
+
+          <p className="education-description">
+            My academic journey and the foundation of my development career.
+          </p>
+
+          <div className="education-timeline">
+            {education.map((item, index) => (
+              <motion.div
+                className="education-item"
+                key={item.degree}
+                initial={{
+                  opacity: 0,
+                  x: index % 2 === 0 ? -70 : 70,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.15,
+                }}
+                viewport={{ once: true }}
+              >
+                <div className="timeline-dot"></div>
+
+                <div className="education-card">
+                  <span className="education-number">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+
+                  <h3>{item.degree}</h3>
+
+                  <p>{item.college}</p>
+
+                  <span className="education-status">
+                    {item.status}
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
