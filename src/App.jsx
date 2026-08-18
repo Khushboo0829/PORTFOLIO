@@ -375,7 +375,115 @@ developer.keepLearning();`}
           </div>
         </motion.div>
       </section>
+              {/* CONTACT SECTION */}
+      <section className="contact-section" id="contact">
 
+        <motion.div
+          className="contact-container"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+
+          <h2 className="section-title">
+            Let's <span>Connect</span>
+          </h2>
+
+          <p className="contact-description">
+            I'm always open to learning opportunities, collaborations,
+            internships, and conversations about technology and development.
+            Feel free to connect with me.
+          </p>
+
+          <div className="contact-grid">
+
+            {/* EMAIL */}
+            <motion.a
+              href="mailto:khushboo2908kumari@gmail.com"
+              className="contact-card"
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <div className="contact-icon">✉</div>
+
+              <div>
+                <span>Email</span>
+                <h3>khushboo2908kumari@gmail.com</h3>
+              </div>
+
+              <div className="contact-arrow">→</div>
+            </motion.a>
+
+
+            {/* LINKEDIN */}
+            <motion.a
+              href="https://www.linkedin.com/in/khushboo-kumari2908"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-card"
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <div className="contact-icon">in</div>
+
+              <div>
+                <span>LinkedIn</span>
+                <h3>Khushboo Kumari</h3>
+              </div>
+
+              <div className="contact-arrow">→</div>
+            </motion.a>
+
+
+            {/* GITHUB */}
+            <motion.a
+              href="https://github.com/Khushboo0829"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-card"
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <div className="contact-icon">&lt;/&gt;</div>
+
+              <div>
+                <span>GitHub</span>
+                <h3>Khushboo0829</h3>
+              </div>
+
+              <div className="contact-arrow">→</div>
+            </motion.a>
+
+          </div>
+
+
+          <motion.div
+            className="contact-message"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p>Have an opportunity or want to collaborate?</p>
+
+            <a href="mailto:khushboo2908kumari@gmail.com">
+              Send Me a Message
+            </a>
+          </motion.div>
+
+        </motion.div>
+
+      </section>
     </div>
   )
 }
