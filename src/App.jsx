@@ -28,7 +28,8 @@ function App() {
       description:
         'An AI-powered mental health support chatbot designed to provide emotional support, mood tracking, chat history, and helpful resources.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Supabase', 'Gemini AI'],
-      github: 'https://github.com/Khushboo0829/COVE-Mental-Health-AI-Chatbot',
+      github:
+        'https://github.com/Khushboo0829/COVE-Mental-Health-AI-Chatbot',
     },
     {
       title: 'CodeFlow Visualizer',
@@ -53,6 +54,7 @@ function App() {
   ]
 
   const [roleIndex, setRoleIndex] = useState(0)
+  const [showTopButton, setShowTopButton] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,6 +63,21 @@ function App() {
 
     return () => clearInterval(interval)
   }, [])
+
+  
+  useEffect(() => {
+  const handleScroll = () => {
+    setShowTopButton(window.scrollY > 500)
+  }
+
+  handleScroll()
+
+  window.addEventListener('scroll', handleScroll)
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll)
+  }
+}, [])
 
   return (
     <div className="portfolio">
@@ -99,20 +116,34 @@ function App() {
           </p>
 
           <div className="hero-buttons">
+
+            {/* VIEW PROJECTS BUTTON */}
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                document
+                  .getElementById('projects')
+                  .scrollIntoView({ behavior: 'smooth' })
+              }}
             >
               View Projects
             </motion.button>
 
+            {/* CONTACT BUTTON */}
             <motion.button
               className="outline-btn"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                document
+                  .getElementById('contact')
+                  .scrollIntoView({ behavior: 'smooth' })
+              }}
             >
               Contact Me
             </motion.button>
+
           </div>
         </motion.div>
 
@@ -375,7 +406,8 @@ developer.keepLearning();`}
           </div>
         </motion.div>
       </section>
-              {/* CONTACT SECTION */}
+
+      {/* CONTACT SECTION */}
       <section className="contact-section" id="contact">
 
         <motion.div
@@ -418,7 +450,6 @@ developer.keepLearning();`}
               <div className="contact-arrow">→</div>
             </motion.a>
 
-
             {/* LINKEDIN */}
             <motion.a
               href="https://www.linkedin.com/in/khushboo-kumari2908"
@@ -440,7 +471,6 @@ developer.keepLearning();`}
 
               <div className="contact-arrow">→</div>
             </motion.a>
-
 
             {/* GITHUB */}
             <motion.a
@@ -466,7 +496,6 @@ developer.keepLearning();`}
 
           </div>
 
-
           <motion.div
             className="contact-message"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -484,6 +513,25 @@ developer.keepLearning();`}
         </motion.div>
 
       </section>
+
+        {/* BACK TO TOP BUTTON */}
+{showTopButton && (
+  <motion.button
+    className="back-to-top"
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    whileHover={{ scale: 1.15, y: -3 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    }}
+  >
+    ↑
+  </motion.button>
+)}
     </div>
   )
 }
