@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import './App.css'
+import profilePhoto from './profile.jpg'
 
 function App() {
   const roles = [
@@ -12,15 +13,37 @@ function App() {
   ]
 
   const skills = [
-    'Java',
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'MySQL',
-    'Git',
-    'GitHub',
-  ]
+  {
+    category: 'CORE LANGUAGE',
+    title: 'Java',
+    description: 'Strong foundation in OOP, DSA and problem solving.',
+    usage: 'Used for coding practice and placement preparation.',
+  },
+  {
+    category: 'WEB DEVELOPMENT',
+    title: 'HTML • CSS • JavaScript',
+    description: 'Used to build COVE Mental Health AI Chatbot',
+    usage: 'and CodeFlow Visualizer.',
+  },
+  {
+    category: 'FRONTEND',
+    title: 'React',
+    description: 'Used to build this personal portfolio',
+    usage: 'with reusable components and animations.',
+  },
+  {
+    category: 'DATABASE',
+    title: 'MySQL',
+    description: 'Worked with relational databases,',
+    usage: 'queries and database concepts.',
+  },
+  {
+    category: 'TOOLS',
+    title: 'Git • GitHub',
+    description: 'Used for version control, project repositories',
+    usage: 'and regular code contribution.',
+  },
+]
 
   const projects = [
     {
@@ -64,30 +87,52 @@ function App() {
     return () => clearInterval(interval)
   }, [])
 
-  
   useEffect(() => {
-  const handleScroll = () => {
-    setShowTopButton(window.scrollY > 500)
-  }
+    const handleScroll = () => {
+      setShowTopButton(window.scrollY > 500)
+    }
 
-  handleScroll()
+    handleScroll()
 
-  window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll)
 
-  return () => {
-    window.removeEventListener('scroll', handleScroll)
-  }
-}, [])
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div className="portfolio">
 
-      {/* BACKGROUND EFFECTS */}
+      {/* ================= NAVBAR ================= */}
+
+      <motion.nav
+        className="navbar"
+        initial={{ y: -70, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </motion.nav>
+
+      {/* ================= BACKGROUND ================= */}
+
       <div className="glow glow-one"></div>
       <div className="glow glow-two"></div>
 
-      {/* HERO SECTION */}
+      {/* ================= HERO ================= */}
+
       <section className="hero-section" id="home">
+
+        {/* LEFT SIDE */}
+
         <motion.div
           className="hero-left"
           initial={{ opacity: 0, x: -80 }}
@@ -100,6 +145,7 @@ function App() {
 
           <h2 className="role-text">
             I am a{' '}
+
             <motion.span
               key={roleIndex}
               initial={{ opacity: 0, y: 10 }}
@@ -115,9 +161,10 @@ function App() {
             technologies, and solving real-world problems through code.
           </p>
 
+          {/* HERO BUTTONS */}
+
           <div className="hero-buttons">
 
-            {/* VIEW PROJECTS BUTTON */}
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
@@ -130,7 +177,6 @@ function App() {
               View Projects
             </motion.button>
 
-            {/* CONTACT BUTTON */}
             <motion.button
               className="outline-btn"
               whileHover={{ scale: 1.08 }}
@@ -144,8 +190,20 @@ function App() {
               Contact Me
             </motion.button>
 
+            <a
+              href="/Khushboo_Kumari_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-btn"
+            >
+              View Resume
+            </a>
+
           </div>
+
         </motion.div>
+
+        {/* ================= RIGHT SIDE ================= */}
 
         <motion.div
           className="hero-right"
@@ -153,6 +211,9 @@ function App() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
+
+          {/* ORIGINAL CODE CARD */}
+
           <motion.div
             className="code-card"
             animate={{ y: [0, -15, 0] }}
@@ -162,30 +223,62 @@ function App() {
               ease: 'easeInOut',
             }}
           >
+
+            {/* ORIGINAL THREE DOTS */}
+
             <div className="code-top">
               <span></span>
               <span></span>
               <span></span>
             </div>
 
+            {/* SMALL PROFILE PHOTO */}
+
+            <motion.div
+              className="code-profile-photo"
+              whileHover={{
+                scale: 1.08,
+              }}
+              transition={{
+                duration: 0.25,
+              }}
+            >
+              <img
+                src={profilePhoto}
+                alt="Khushboo Kumari"
+              />
+            </motion.div>
+
+            {/* ORIGINAL CODE TEXT */}
+
             <pre>
               <code>
 {`const developer = {
+
   name: "Khushboo Kumari",
+
   course: "MCA",
+
   passion: "Coding",
+
   goal: "Build Amazing Things"
+
 };
 
 developer.keepLearning();`}
               </code>
             </pre>
+
           </motion.div>
+
         </motion.div>
+
       </section>
 
-      {/* ABOUT SECTION */}
+      {/* ================= ABOUT ================= */}
+
       <section className="about-section" id="about">
+
         <motion.div
           className="about-container"
           initial={{ opacity: 0, y: 70 }}
@@ -193,6 +286,7 @@ developer.keepLearning();`}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+
           <h2 className="section-title">
             About <span>Me</span>
           </h2>
@@ -212,6 +306,7 @@ developer.keepLearning();`}
           </p>
 
           <div className="about-cards">
+
             <motion.div
               className="about-card"
               whileHover={{ y: -10, scale: 1.03 }}
@@ -238,60 +333,81 @@ developer.keepLearning();`}
               <p>Software Development</p>
               <span>Learning & Building</span>
             </motion.div>
+
           </div>
+
         </motion.div>
+
       </section>
 
-      {/* SKILLS SECTION */}
-      <section className="skills-section" id="skills">
+      {/* ================= SKILLS ================= */}
+
+
+<section className="skills-section" id="skills">
+
+  <motion.div
+    className="skills-container"
+    initial={{ opacity: 0, y: 70 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+
+    <h2 className="section-title">
+      My <span>Skills</span>
+    </h2>
+
+    <p className="skills-description">
+      Technologies and tools I currently use while learning,
+      practicing, and building projects.
+    </p>
+
+    <div className="skills-expertise-list">
+
+      {skills.map((skill, index) => (
+
         <motion.div
-          className="skills-container"
-          initial={{ opacity: 0, y: 70 }}
+          className="skills-expertise-item"
+          key={skill.category}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            duration: 0.45,
+            delay: index * 0.08,
+          }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">
-            My <span>Skills</span>
-          </h2>
 
-          <p className="skills-description">
-            Technologies and tools I currently use while learning,
-            practicing, and building projects.
+          <p className="skills-category">
+            {skill.category}
           </p>
 
-          <div className="skills-grid">
-            {skills.map((skill, index) => (
-              <motion.div
-                className="skill-card"
-                key={skill}
-                initial={{ opacity: 0, scale: 0.85 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.08,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  y: -10,
-                  scale: 1.05,
-                }}
-              >
-                <div className="skill-number">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
+          <h3 className="skills-title">
+            {skill.title}
+          </h3>
 
-                <h3>{skill}</h3>
+          <p className="skills-detail">
+            {skill.description}
+          </p>
 
-                <div className="skill-line"></div>
-              </motion.div>
-            ))}
-          </div>
+          <p className="skills-detail">
+            {skill.usage}
+          </p>
+
         </motion.div>
-      </section>
 
-      {/* PROJECTS SECTION */}
+      ))}
+
+    </div>
+
+  </motion.div>
+
+</section>
+
+      {/* ================= PROJECTS ================= */}
+
       <section className="projects-section" id="projects">
+
         <motion.div
           className="projects-container"
           initial={{ opacity: 0, y: 70 }}
@@ -299,6 +415,7 @@ developer.keepLearning();`}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+
           <h2 className="section-title">
             My <span>Projects</span>
           </h2>
@@ -309,7 +426,9 @@ developer.keepLearning();`}
           </p>
 
           <div className="projects-grid">
+
             {projects.map((project, index) => (
+
               <motion.div
                 className="project-card"
                 key={project.title}
@@ -322,6 +441,7 @@ developer.keepLearning();`}
                 viewport={{ once: true }}
                 whileHover={{ y: -12 }}
               >
+
                 <div className="project-number">
                   {String(index + 1).padStart(2, '0')}
                 </div>
@@ -331,9 +451,15 @@ developer.keepLearning();`}
                 <p>{project.description}</p>
 
                 <div className="project-tech">
+
                   {project.technologies.map((technology) => (
-                    <span key={technology}>{technology}</span>
+
+                    <span key={technology}>
+                      {technology}
+                    </span>
+
                   ))}
+
                 </div>
 
                 <a
@@ -344,14 +470,21 @@ developer.keepLearning();`}
                 >
                   View on GitHub
                 </a>
+
               </motion.div>
+
             ))}
+
           </div>
+
         </motion.div>
+
       </section>
 
-      {/* EDUCATION SECTION */}
+      {/* ================= EDUCATION ================= */}
+
       <section className="education-section" id="education">
+
         <motion.div
           className="education-container"
           initial={{ opacity: 0, y: 70 }}
@@ -359,6 +492,7 @@ developer.keepLearning();`}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+
           <h2 className="section-title">
             My <span>Education</span>
           </h2>
@@ -368,7 +502,9 @@ developer.keepLearning();`}
           </p>
 
           <div className="education-timeline">
+
             {education.map((item, index) => (
+
               <motion.div
                 className="education-item"
                 key={item.degree}
@@ -386,9 +522,11 @@ developer.keepLearning();`}
                 }}
                 viewport={{ once: true }}
               >
+
                 <div className="timeline-dot"></div>
 
                 <div className="education-card">
+
                   <span className="education-number">
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -400,14 +538,21 @@ developer.keepLearning();`}
                   <span className="education-status">
                     {item.status}
                   </span>
+
                 </div>
+
               </motion.div>
+
             ))}
+
           </div>
+
         </motion.div>
+
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* ================= CONTACT ================= */}
+
       <section className="contact-section" id="contact">
 
         <motion.div
@@ -431,6 +576,7 @@ developer.keepLearning();`}
           <div className="contact-grid">
 
             {/* EMAIL */}
+
             <motion.a
               href="mailto:khushboo2908kumari@gmail.com"
               className="contact-card"
@@ -440,17 +586,24 @@ developer.keepLearning();`}
               }}
               whileTap={{ scale: 0.97 }}
             >
-              <div className="contact-icon">✉</div>
+
+              <div className="contact-icon">
+                ✉
+              </div>
 
               <div>
                 <span>Email</span>
                 <h3>khushboo2908kumari@gmail.com</h3>
               </div>
 
-              <div className="contact-arrow">→</div>
+              <div className="contact-arrow">
+                →
+              </div>
+
             </motion.a>
 
             {/* LINKEDIN */}
+
             <motion.a
               href="https://www.linkedin.com/in/khushboo-kumari2908"
               target="_blank"
@@ -462,17 +615,24 @@ developer.keepLearning();`}
               }}
               whileTap={{ scale: 0.97 }}
             >
-              <div className="contact-icon">in</div>
+
+              <div className="contact-icon">
+                in
+              </div>
 
               <div>
                 <span>LinkedIn</span>
                 <h3>Khushboo Kumari</h3>
               </div>
 
-              <div className="contact-arrow">→</div>
+              <div className="contact-arrow">
+                →
+              </div>
+
             </motion.a>
 
             {/* GITHUB */}
+
             <motion.a
               href="https://github.com/Khushboo0829"
               target="_blank"
@@ -484,14 +644,20 @@ developer.keepLearning();`}
               }}
               whileTap={{ scale: 0.97 }}
             >
-              <div className="contact-icon">&lt;/&gt;</div>
+
+              <div className="contact-icon">
+                &lt;/&gt;
+              </div>
 
               <div>
                 <span>GitHub</span>
                 <h3>Khushboo0829</h3>
               </div>
 
-              <div className="contact-arrow">→</div>
+              <div className="contact-arrow">
+                →
+              </div>
+
             </motion.a>
 
           </div>
@@ -503,35 +669,43 @@ developer.keepLearning();`}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p>Have an opportunity or want to collaborate?</p>
+
+            <p>
+              Have an opportunity or want to collaborate?
+            </p>
 
             <a href="mailto:khushboo2908kumari@gmail.com">
               Send Me a Message
             </a>
+
           </motion.div>
 
         </motion.div>
 
       </section>
 
-        {/* BACK TO TOP BUTTON */}
-{showTopButton && (
-  <motion.button
-    className="back-to-top"
-    initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    whileHover={{ scale: 1.15, y: -3 }}
-    whileTap={{ scale: 0.9 }}
-    onClick={() => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      })
-    }}
-  >
-    ↑
-  </motion.button>
-)}
+      {/* ================= BACK TO TOP ================= */}
+
+      {showTopButton && (
+
+        <motion.button
+          className="back-to-top"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.15, y: -3 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            })
+          }}
+        >
+          ↑
+        </motion.button>
+
+      )}
+
     </div>
   )
 }
