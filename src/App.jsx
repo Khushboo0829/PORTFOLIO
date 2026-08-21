@@ -292,19 +292,24 @@ developer.keepLearning();`}
           </h2>
 
           <p className="about-text">
-            I am Khushboo Kumari, currently pursuing my Master of Computer
-            Applications (MCA) from Banasthali Vidyapith, Rajasthan.
-            I have also completed my Bachelor of Computer Applications (BCA)
-            from Banasthali Vidyapith.
+            I'm Khushboo Kumari, currently pursuing my Master of Computer Applications
+           at Banasthali Vidyapith, Rajasthan, where I also completed my BCA. Five years
+           at the same institution taught me something useful: depth beats novelty.
+           I'd rather understand one language properly than collect five.
           </p>
 
           <p className="about-text">
-            I am passionate about software development, web technologies,
-            Java programming, and problem solving. I enjoy learning new
-            technologies and applying my knowledge by building practical
-            projects.
+            That language is Java. I build with it, break things with it, and use it to
+            work through problems that don't have obvious answers — which is most of the
+           interesting ones. Alongside it, I work across modern web technologies,
+            turning concepts into projects that actually run rather than notes that
+           stay in a folder.
           </p>
 
+   <p>
+      I'm looking for a role where I can keep building — ideally somewhere the
+       code ships and the problems are real.
+    </p>
           <div className="about-cards">
 
             <motion.div
