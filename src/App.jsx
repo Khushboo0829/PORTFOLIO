@@ -165,43 +165,28 @@ function App() {
 
           <div className="hero-buttons">
 
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                document
-                  .getElementById('projects')
-                  .scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              View Projects
-            </motion.button>
+  <motion.button
+    whileHover={{ scale: 1.08 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => {
+      document
+        .getElementById('projects')
+        .scrollIntoView({ behavior: 'smooth' })
+    }}
+  >
+    View Projects
+  </motion.button>
 
-            <motion.button
-              className="outline-btn"
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                document
-                  .getElementById('contact')
-                  .scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Contact Me
-            </motion.button>
+  <a
+    href="/Khushboo_Kumari_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="resume-btn"
+  >
+    View Resume
+  </a>
 
-            <a
-              href="/Khushboo_Kumari_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-btn"
-            >
-              View Resume
-            </a>
-
-          </div>
-
-        </motion.div>
+</div>
 
         {/* ================= RIGHT SIDE ================= */}
 
