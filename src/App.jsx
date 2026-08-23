@@ -187,6 +187,7 @@ function App() {
   </a>
 
 </div>
+</motion.div>
 
         {/* ================= RIGHT SIDE ================= */}
 
