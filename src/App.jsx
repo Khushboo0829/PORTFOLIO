@@ -63,6 +63,40 @@ function App() {
     },
   ]
 
+  const certifications = [
+  {
+    title: 'SQL for Data Analysis',
+    issuer: 'Simplilearn SkillUp',
+    date: 'August 2026',
+    file: '/Simplilearn_SQL_for_Data_Analysis_Certificate.pdf',
+  },
+  {
+    title: 'Data Visualisation: Empowering Business with Effective Insights',
+    issuer: 'TATA',
+    date: 'July 2026',
+    file: '/TATA_Data_Visualisation_Certificate.pdf',
+  },
+  {
+    title: 'Introduction to Modern AI',
+    issuer: 'Cisco Networking Academy',
+    date: 'July 2026',
+    file: '/Cisco_Introduction_to_Modern_AI_Certificate.pdf',
+  },
+  {
+    title: 'Data Analytics',
+    issuer: 'Deloitte',
+    date: 'June 2026',
+    file: '/Deloitte_Data_Analytics_Certificate.pdf',
+  },
+  {
+    title: 'GenAI Powered Data Analytics',
+    issuer: 'TATA',
+    date: 'July 2026',
+    file: '/Tata_GenAI_Data_Analytics_Certificate.pdf',
+  },
+]
+
+
   const education = [
     {
       degree: 'Master of Computer Applications (MCA)',
@@ -117,6 +151,7 @@ function App() {
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
@@ -471,6 +506,78 @@ developer.keepLearning();`}
         </motion.div>
 
       </section>
+
+{/* ================= CERTIFICATIONS ================= */}
+
+<section className="certifications-section" id="certifications">
+
+  <motion.div
+    className="certifications-container"
+    initial={{ opacity: 0, y: 70 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+
+    <h2 className="section-title">
+      My <span>Certifications</span>
+    </h2>
+
+    <p className="certifications-description">
+      Certifications completed while strengthening my skills in
+      data analytics, artificial intelligence, SQL, and technology.
+    </p>
+
+    <div className="certifications-grid">
+
+      {certifications.map((certificate, index) => (
+
+        <motion.div
+          className="certificate-card"
+          key={certificate.title}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: index * 0.1,
+          }}
+          viewport={{ once: true }}
+          whileHover={{ y: -10 }}
+        >
+
+          <div className="certificate-number">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+
+          <span className="certificate-issuer">
+            {certificate.issuer}
+          </span>
+
+          <h3>{certificate.title}</h3>
+
+          <p className="certificate-date">
+            {certificate.date}
+          </p>
+
+          <a
+            href={certificate.file}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="certificate-button"
+          >
+            View Certificate
+          </a>
+
+        </motion.div>
+
+      ))}
+
+    </div>
+
+  </motion.div>
+
+</section>
+
 
       {/* ================= EDUCATION ================= */}
 
