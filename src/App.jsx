@@ -38,6 +38,12 @@ function App() {
     usage: 'queries and database concepts.',
   },
   {
+  category: 'DATA ANALYSIS',
+  title: 'Microsoft Excel',
+  description: 'Worked with spreadsheets, formulas, functions, and data organization.',
+  usage: 'Used for data analysis, cleaning, and presenting information.',
+},
+  {
     category: 'TOOLS',
     title: 'Git • GitHub',
     description: 'Used for version control, project repositories',
