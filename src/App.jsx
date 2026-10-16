@@ -159,6 +159,7 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#certifications">Certifications</a>
           <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
       </motion.nav>
@@ -654,6 +655,50 @@ developer.keepLearning();`}
         </motion.div>
 
       </section>
+      {/* ================= EXPERIENCE ================= */}
+
+<section className="experience-section" id="experience">
+  <motion.div
+    className="experience-container"
+    initial={{ opacity: 0, y: 70 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <h2 className="section-title">
+      My <span>Experience</span>
+    </h2>
+
+    <p className="experience-description">
+      Gaining practical industry experience and developing
+      professional skills through real-world opportunities.
+    </p>
+
+    <motion.div
+      className="experience-card"
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3 }}
+    >
+      <span className="experience-status">
+        Currently Working
+      </span>
+
+      <h3>Data Analyst Intern</h3>
+
+      <h4>InAmigos Foundation</h4>
+
+      <p className="experience-date">
+        2026 – Present
+      </p>
+
+      <p className="experience-details">
+        Gaining hands-on exposure to data analysis, data
+        organization, and analytical workflows while
+        contributing to the foundation's initiatives.
+      </p>
+    </motion.div>
+  </motion.div>
+</section>
 
       {/* ================= CONTACT ================= */}
 
