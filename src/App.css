@@ -1846,3 +1846,31 @@ body {
     font-size: 15px;
   }
 }
+/* =========================================
+   FUTURISTIC 3D HERO EFFECT
+========================================= */
+
+.hero-right {
+  perspective: 1200px;
+  perspective-origin: center;
+}
+
+.code-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.code-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.08),
+    transparent 45%,
+    rgba(168, 85, 247, 0.08)
+  );
+}
