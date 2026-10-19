@@ -1874,3 +1874,17 @@ body {
     rgba(168, 85, 247, 0.08)
   );
 }
+/* =========================================
+   FUTURISTIC 3D HOVER GLOW
+========================================= */
+
+.code-card {
+  transition: box-shadow 0.3s ease;
+}
+
+.code-card:hover {
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.25),
+    0 0 45px rgba(168, 85, 247, 0.2),
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}

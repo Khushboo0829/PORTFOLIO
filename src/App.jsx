@@ -243,14 +243,29 @@ function App() {
           {/* ORIGINAL CODE CARD */}
 
           <motion.div
-            className="code-card"
-            animate={{ y: [0, -15, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
+  className="code-card"
+  initial={{ rotateX: 0, rotateY: 0 }}
+  animate={{ y: [0, -15, 0] }}
+  whileHover={{ scale: 1.03 }}
+  onMouseMove={(e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+
+    const x = (e.clientX - rect.left) / rect.width
+    const y = (e.clientY - rect.top) / rect.height
+
+    e.currentTarget.style.rotate = 'none'
+    e.currentTarget.style.transform =
+      `perspective(1200px) rotateX(${(0.5 - y) * 12}deg) rotateY(${(x - 0.5) * 12}deg)`
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = ''
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    ease: 'easeInOut',
+  }}
+>
 
             {/* ORIGINAL THREE DOTS */}
 
