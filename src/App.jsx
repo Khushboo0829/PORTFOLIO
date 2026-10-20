@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import './App.css'
 import profilePhoto from './profile.jpg'
 
 function App() {
+  const { scrollYProgress } = useScroll()
+
+const scaleX = useSpring(scrollYProgress, {
+  stiffness: 100,
+  damping: 30,
+  restDelta: 0.001,
+})
   const roles = [
     'MCA Student',
     'Web Developer',
@@ -141,9 +148,14 @@ function App() {
     }
   }, [])
 
-  return (
-    <div className="portfolio">
+    return (
+  <div className="portfolio">
 
+    {/* SCROLL PROGRESS INDICATOR */}
+    <motion.div
+      className="scroll-progress"
+      style={{ scaleX }}
+    />
       {/* ================= NAVBAR ================= */}
 
       <motion.nav
@@ -183,7 +195,7 @@ function App() {
         >
           <p className="intro">Hello, I'm</p>
 
-          <h1>Khushboo Kumari</h1>
+          <h1 className="gradient-heading">Khushboo Kumari</h1>
 
           <h2 className="role-text">
             I am a{' '}
