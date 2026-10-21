@@ -499,7 +499,14 @@ developer.keepLearning();`}
                   delay: index * 0.15,
                 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -12 }}
+                whileHover={{
+  y: -12,
+  scale: 1.03,
+  transition: {
+    duration: 0.3,
+    ease: 'easeOut',
+  },
+}}
               >
 
                 <div className="project-number">
