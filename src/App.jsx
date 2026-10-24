@@ -232,13 +232,13 @@ const scaleX = useSpring(scrollYProgress, {
   </motion.button>
 
   <a
-    href="/Khushboo_Kumari_Resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="resume-btn"
-  >
-    View Resume
-  </a>
+  href="/Khushboo_Kumari_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="resume-btn"
+>
+  View Resume ↗
+</a>
 
 </div>
 </motion.div>
@@ -427,16 +427,25 @@ developer.keepLearning();`}
       {skills.map((skill, index) => (
 
         <motion.div
-          className="skills-expertise-item"
-          key={skill.category}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.45,
-            delay: index * 0.08,
-          }}
-          viewport={{ once: true }}
-        >
+  className="skills-expertise-item"
+  key={skill.category}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    rotateX: 2,
+    transition: {
+      duration: 0.25,
+      ease: 'easeOut',
+    },
+  }}
+  transition={{
+    duration: 0.45,
+    delay: index * 0.08,
+  }}
+  viewport={{ once: true }}
+>
 
           <p className="skills-category">
             {skill.category}
@@ -733,6 +742,47 @@ developer.keepLearning();`}
     </motion.div>
   </motion.div>
 </section>
+{/* CONTACT FORM */}
+
+<div className="contact-form-container" id="contact-form">
+
+  <h3>Send Me a Message</h3>
+
+  <p>
+    Have a question, opportunity, or collaboration idea?
+    I'd love to hear from you.
+  </p>
+
+  <form className="contact-form">
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Full Name"
+      required
+    />
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email Address"
+      required
+    />
+
+    <textarea
+      name="message"
+      placeholder="Write your message here..."
+      rows="5"
+      required
+    />
+
+    <button type="submit">
+      Send Message →
+    </button>
+
+  </form>
+
+</div>
 
       {/* ================= CONTACT ================= */}
 
@@ -857,8 +907,8 @@ developer.keepLearning();`}
               Have an opportunity or want to collaborate?
             </p>
 
-            <a href="mailto:khushboo2908kumari@gmail.com">
-              Send Me a Message
+            <a href="#contact-form">
+            Send Me a Message
             </a>
 
           </motion.div>

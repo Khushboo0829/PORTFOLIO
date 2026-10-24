@@ -2000,3 +2000,103 @@ body {
     0 0 25px rgba(56, 189, 248, 0.7),
     0 0 45px rgba(168, 85, 247, 0.45);
 }
+/* =========================================
+   FUTURISTIC SKILLS HOVER EFFECT
+========================================= */
+
+.skills-expertise-item {
+  transform-style: preserve-3d;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.skills-expertise-item:hover {
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.2),
+    0 0 35px rgba(168, 85, 247, 0.15),
+    0 15px 40px rgba(0, 0, 0, 0.3);
+}
+/* =========================================
+   FUTURISTIC CONTACT FORM
+========================================= */
+
+.contact-form-container {
+  max-width: 650px;
+  margin: 60px auto 0;
+  padding: 35px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form-container h3 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.contact-form-container p {
+  color: #94a3b8;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 18px;
+  background: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+.contact-form button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.3s, filter 0.3s;
+}
+
+.contact-form button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+}
+
+@media (max-width: 600px) {
+  .contact-form-container {
+    margin-top: 35px;
+    padding: 24px 18px;
+  }
+}
