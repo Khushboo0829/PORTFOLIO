@@ -2,8 +2,28 @@ import { useEffect, useState } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import './App.css'
 import profilePhoto from './profile.jpg'
+import emailjs from '@emailjs/browser';
 
 function App() {
+  
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    'service_s4lt1cx',
+    'template_c3as5ei',
+    e.currentTarget,
+    'WTM5rQMljxNumCQTw'
+  )
+  .then(() => {
+    alert('Message sent successfully!');
+  })
+  .catch((error) => {
+    console.error('EmailJS Error:', error);
+    alert('Failed to send message. Please try again.');
+  });
+};
+
   const { scrollYProgress } = useScroll()
 
 const scaleX = useSpring(scrollYProgress, {
@@ -753,7 +773,7 @@ developer.keepLearning();`}
     I'd love to hear from you.
   </p>
 
-  <form className="contact-form">
+<form className="contact-form" onSubmit={sendEmail}>
 
     <input
       type="text"
