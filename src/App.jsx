@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import './App.css'
 import profilePhoto from './profile.jpg'
 import emailjs from '@emailjs/browser';
+import ParticlesBackground from "./ParticlesBackground";
 
 function App() {
   
@@ -170,7 +171,7 @@ const scaleX = useSpring(scrollYProgress, {
 
     return (
   <div className="portfolio">
-
+    <ParticlesBackground />
     {/* SCROLL PROGRESS INDICATOR */}
     <motion.div
       className="scroll-progress"
